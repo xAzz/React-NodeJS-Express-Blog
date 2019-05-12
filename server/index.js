@@ -295,38 +295,7 @@ io.on('connection', socket => {
 
 		const { pID, message } = data;
 
-		bucket.get(pID, (error, result) => {
-			if (error) return;
-
-			let messages = result.value.messages;
-			let username = result.value.username;
-
-			const time = new Date().getTime();
-			let length = Object.keys(messages).length + 1;
-
-			let query = N1qlQuery.fromString(`SELECT ${bucket._name}.* FROM ${bucket._name} WHERE type = 'account' AND pID = $pID`);
-			bucket.query(query, { pID: socket.pID }, (error, result) => {
-				if (error) return console.log(error);
-				messages.from[socket.pID] = { username: result[0].username, pID, message, time };
-
-				query = N1qlQuery.fromString(`UPDATE ${bucket._name} SET messages = ${JSON.stringify(messages)} WHERE type = 'account' AND pID = $pID`);
-				bucket.query(query, { pID }, (error, result) => {
-					if (error) return console.log(error);
-					bucket.get(socket.pID, (error, result) => {
-						messages = result.value.messages;
-
-						length = Object.keys(messages).length + 1;
-						messages.to[pID] = { username, pID: socket.pID, message, time };
-
-						query = N1qlQuery.fromString(`UPDATE ${bucket._name} SET messages = ${JSON.stringify(messages)} WHERE type = 'account' AND pID = $pID`);
-						bucket.query(query, { pID: socket.pID }, (error, result) => {
-							if (error) return console.log(error);
-							// Query Finished
-						});
-					});
-				});
-			});
-		});
+		
 	});
 
 	socket.on('disconnect', () => {
