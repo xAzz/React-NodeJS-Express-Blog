@@ -17,7 +17,7 @@ const avatarFolder = '../client/public/avatars'; // Root to Avatars Folder where
 
 const cluster = new Couchbase.Cluster('couchbase://127.0.0.1');
 cluster.authenticate('', ''); // ('Username', 'Password')
-const bucket = cluster.openBucket('selftoolz', '');
+const bucket = cluster.openBucket('selftoolz', ''); // Replace 'selftoolz' with your database name
 
 app.use(BodyParser.json());
 app.use(BodyParser.urlencoded({ extended: true }));
