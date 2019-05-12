@@ -1,0 +1,210 @@
+.messageValue {
+	margin: 0 0 16px;
+}
+
+.messageValue:first-child {
+	margin-top: 0;
+}
+
+.messageValue:last-child {
+	margin-bottom: 0;
+}
+
+#message {
+	border: 0;
+	background-image: linear-gradient(#9c27b0, #9c27b0), linear-gradient(#d2d2d2, #d2d2d2);
+	background-size: 0 2px, 100% 1px;
+	background-repeat: no-repeat;
+	background-position: center bottom, center calc(100% - 1px);
+	background-color: rgba(0, 0, 0, 0);
+	transition: background 0s ease-out;
+	float: none;
+	box-shadow: none;
+	border-radius: 0;
+	font-weight: 400;
+	resize: none;
+	min-height: 125px;
+	font-size: 14px;
+	line-height: 1.42857;
+	display: block;
+	width: 100%;
+	color: #555;
+	font-family: inherit;
+	padding: 15px 10px;
+}
+
+#message:focus {
+	outline: none;
+	background-image: linear-gradient(#9c27b0, #9c27b0), linear-gradient(#d2d2d2, #d2d2d2);
+	background-size: 100% 2px, 100% 1px;
+	box-shadow: none;
+	transition-duration: 0.3s;
+}
+
+.modalOverlay {
+	position: fixed;
+	z-index: 100;
+	top: 0;
+	left: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	/* opacity: 0; */
+	animation-duration: 200ms;
+	animation-timing-function: linear;
+	animation-fill-mode: both;
+	will-change: transform, opacity;
+}
+
+.modalOverlay {
+	background: rgba(0, 0, 0, 0.6);
+}
+
+.messageModal {
+	position: relative;
+	display: flex;
+	overflow: hidden;
+	flex-direction: column;
+	width: 420px;
+	height: 75%;
+	text-align: left;
+	background: #fff;
+	box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+	animation-duration: 300ms;
+	animation-fill-mode: both;
+	font: 16px/1.5 'Roboto', sans-serif;
+	will-change: transform, opacity;
+}
+
+@media (min-width: 640px) {
+	.messageModal {
+		max-width: 420px;
+		height: auto;
+		max-height: 100%;
+		margin: 1.5rem;
+		border-radius: 4px;
+	}
+}
+
+.modalHeader {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-shrink: 0;
+	min-height: 3rem;
+	padding: 0.75rem 16px;
+	color: rgba(0, 0, 0, 0.6);
+}
+
+.modalTitle {
+	margin: 0;
+	font-size: 20px;
+	font-weight: 700;
+	line-height: calc(1em + 8px);
+}
+
+.modalContent {
+	overflow-x: hidden;
+	overflow-y: auto;
+	flex-grow: 1;
+	width: 100%;
+	padding: 16px;
+	font-size: 16px;
+	color: rgba(0, 0, 0, 0.8);
+}
+
+.modalFooter {
+	display: flex;
+	flex-shrink: 0;
+	padding: 16px;
+}
+
+.modalFooter:before {
+	flex-grow: 1;
+	content: '';
+}
+
+#recipient {
+	display: block;
+	width: 100%;
+	height: calc(2.75rem + 2px);
+	padding: 0.625rem 0.75rem;
+	font-size: 16px;
+	line-height: 1.5;
+	color: #8898aa;
+	background-color: #fff;
+	background-clip: padding-box;
+	border: 1px solid #cad1d7;
+	border-radius: 4px;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	-webkit-transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+	transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+	font: inherit;
+	border: 0;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+#recipient:disabled,
+#recipient[readonly] {
+	background-color: #e9ecef;
+	opacity: 1;
+	cursor: default;
+}
+
+.modalFooter button {
+	display: inline-block;
+	font-weight: 600;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	border: 1px solid transparent;
+	padding: 10px 20px;
+	font-size: 16px;
+	line-height: 1.5;
+	border-radius: 4px;
+	-webkit-box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+	box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+	position: relative;
+	text-transform: uppercase;
+	-webkit-transition: all 0.15s ease;
+	transition: all 0.15s ease;
+	will-change: transform;
+	letter-spacing: 0.4px;
+	font-size: 14px;
+	-webkit-appearance: button;
+	margin-top: 8px;
+	margin-bottom: 8px;
+	cursor: pointer;
+	color: #fff;
+	outline: none;
+}
+
+.sendMessage {
+	background-color: #2dce89;
+	border-color: #2dce89;
+}
+
+.modalFooter button:hover {
+	-webkit-box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+	box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+	-webkit-transform: translateY(-1px);
+	transform: translateY(-1px);
+}
+
+.cancelMessage {
+	background-color: #f5365c;
+	border-color: #f5365c;
+}
+
+.modalFooter button:last-of-type {
+	margin-left: 10px;
+}

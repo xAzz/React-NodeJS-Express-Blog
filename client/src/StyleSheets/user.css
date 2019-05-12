@@ -1,0 +1,111 @@
+.userImage {
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	line-height: 80px;
+	font-size: 4rem;
+}
+
+.userHolder {
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	display: block;
+	cursor: pointer;
+}
+
+.userName {
+	max-width: 94px;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	display: inline-block;
+	text-align: center;
+	color: #337ab7;
+	cursor: pointer;
+}
+
+.user {
+	display: inline-block;
+	margin-top: 20px;
+	text-align: center;
+	vertical-align: top;
+	width: 104px;
+	transition: 0.3s;
+}
+
+.user:hover {
+	transform: scale(1.05);
+}
+
+.userName:hover {
+	text-decoration: none;
+	color: #23527c;
+}
+
+.userCard {
+	display: block !important;
+}
+
+.userTitle {
+	text-align: center;
+	font-size: 36px;
+	margin: 8px 0;
+	text-decoration: underline;
+}
+
+.userArticle {
+	min-height: 200px !important;
+}
+
+.userBtn {
+	cursor: pointer;
+	font-size: 16px;
+	transition: all 0.15s ease;
+	letter-spacing: 1px;
+	text-transform: none;
+	margin-right: 40px;
+	margin-left: 40px;
+	line-height: 1.5;
+	padding: 5px 8px;
+	border-radius: 4px;
+	color: #fff;
+	box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+	display: inline-block;
+	font-weight: 600;
+	user-select: none;
+	text-align: center;
+	vertical-align: middle;
+	white-space: nowrap;
+	outline: none;
+	border: 1px solid transparent;
+}
+
+.userBtn:disabled {
+	cursor: not-allowed;
+	opacity: 0.6;
+}
+
+.userBtn:hover {
+	text-decoration: none;
+	transform: translateY(-1px);
+	box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+}
+
+.follow {
+	float: left;
+	border-color: #11cdef;
+	background-color: #11cdef;
+}
+
+.unfollow {
+	float: left;
+	border-color: #e55656;
+	background-color: #e55656;
+}
+
+.message {
+	float: right;
+	border-color: #ef5911;
+	background-color: #ef5911;
+}
