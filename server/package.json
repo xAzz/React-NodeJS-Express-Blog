@@ -13,6 +13,6 @@
 		"couchbase": "^2.6.4",
 		"express": "^4.16.4",
 		"identicon.js": "^2.3.3",
-		"socket.io": "^2.2.0"
+		"socket.io": "^2.5.0"
 	}
 }
